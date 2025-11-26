@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alysa Cardoz – Marketing & Creative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Portfolio of Alysa Cardoz – marketing, events, content and retail experience in Vancouver." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --bg-soft: #f5f5f7;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-strong: #1d4ed8;
+      --accent-soft: #e0edff;
+      --accent-soft-2: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 960px;
+    }
+
+    /* THEME 1 – Minimal Clean White */
+    body.theme-white {
+      --bg: #fdfdfd;
+      --bg-soft: #f5f5f7;
+      --card: #ffffff;
+      --accent: #111827;
+      --accent-strong: #111827;
+      --accent-soft: #f4f4f5;
+      --accent-soft-2: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    /* THEME 2 – Beige Minimal Luxury */
+    body.theme-beige {
+      --bg: #f8f3ec;
+      --bg-soft: #f3e7da;
+      --card: #fdf9f3;
+      --accent: #c28b5a;
+      --accent-strong: #b26a3c;
+      --accent-soft: #f6e3cf;
+      --accent-soft-2: #efe0cf;
+      --text-main: #3a3127;
+      --text-muted: #7c6a57;
+      --border-subtle: #e1cfba;
+      --shadow-soft: 0 18px 40px rgba(120, 81, 51, 0.12);
+    }
+
+    /* THEME 3 – Soft Pastel Modern (default) */
+    body.theme-pastel {
+      --bg: #fdfbff;
+      --bg-soft: #f7f5ff;
+      --card: #ffffff;
+      --accent: #f7a8c4;
+      --accent-strong: #ff6fa5;
+      --accent-soft: #ffe5f0;
+      --accent-soft-2: #e9f3ff;
+      --text-main: #161827;
+      --text-muted: #6b7280;
+      --border-subtle: #e4e4f2;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    /* THEME 4 – Bold Minimal Black & White */
+    body.theme-mono {
+      --bg: #f4f4f5;
+      --bg-soft: #e5e5e5;
+      --card: #ffffff;
+      --accent: #111827;
+      --accent-strong: #000000;
+      --accent-soft: #e5e5e5;
+      --accent-soft-2: #d4d4d4;
+      --text-main: #000000;
+      --text-muted: #4b5563;
+      --border-subtle: #d4d4d8;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    /* THEME 5 – Neutral Minimal (Apple-ish) */
+    body.theme-neutral {
+      --bg: #f5f5f7;
+      --bg-soft: #e5e5ea;
+      --card: #ffffff;
+      --accent: #0071e3;
+      --accent-strong: #005bb5;
+      --accent-soft: #dbeafe;
+      --accent-soft-2: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #d1d5db;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 40px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    main {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    /* Theme switcher */
+    .theme-switcher {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .theme-switcher-title {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .theme-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .theme-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: var(--card);
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+      transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease, border-color 0.15s ease;
+    }
+
+    .theme-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .theme-btn[data-theme="white"] .theme-dot { background: #e5e7eb; }
+    .theme-btn[data-theme="beige"] .theme-dot { background: #f1dec4; }
+    .theme-btn[data-theme="pastel"] .theme-dot { background: #ffd7ec; }
+    .theme-btn[data-theme="mono"] .theme-dot { background: #111827; }
+    .theme-btn[data-theme="neutral"] .theme-dot { background: #d1e4ff; }
+
+    .theme-btn.active {
+      border-color: var(--accent);
+      color: var(--text-main);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 3.6vw, 2.8rem);
+      margin-bottom: 6px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      body {
+        padding-top: 18px;
+      }
+      .theme-switcher {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .name-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .name-highlight {
+      background: linear-gradient(120deg, var(--accent-strong), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: 600;
+    }
+
+    .hero-role {
+      font-size: 0.86rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft-2);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .tagline-main {
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .tagline-main span {
+      color: var(--accent-strong);
+    }
+
+    .tagline-sub {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      max-width: 460px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.86rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.12s ease,
+        border-color 0.12s ease,
+        color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #ffffff;
+      font-weight: 500;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
+    }
+
+    .btn-ghost {
+      background: var(--card);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-soft);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      font-size: 1rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .badge {
+      font-size: 0.74rem;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: var(--card);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: 22px;
+      border: 1px solid var(--border-subtle);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .metric-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--text-main);
+      font-size: 0.76rem;
+    }
+
+    .metric-chip span {
+      font-weight: 600;
+    }
+
+    .stat-block {
+      border-radius: 14px;
+      padding: 9px 11px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--text-muted);
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+    }
+
+    .stat-value {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .hero-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+
+    .hero-footer strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .section-heading {
+      font-size: 1.08rem;
+      margin-bottom: 3px;
+    }
+
+    .section-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-title {
+      font-size: 0.94rem;
+      margin-bottom: 4px;
+    }
+
+    .card-tagline {
+      font-size: 0.8rem;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+    }
+
+    .card-text {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .badge-row-small {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .badge-small {
+      font-size: 0.74rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: var(--bg-soft);
+    }
+
+    .brands-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .brand-pill {
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px dashed var(--border-subtle);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: var(--card);
+    }
+
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .download-card {
+      flex: 1 1 180px;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 12px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.84rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .download-title {
+      font-weight: 500;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      font-size: 0.84rem;
+    }
+
+    .contact-label {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+
+    .contact-value a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 8px;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="theme-pastel">
+  <main>
+    <!-- THEME SWITCHER -->
+    <div class="theme-switcher">
+      <div class="theme-switcher-title">
+        Switch theme:
+      </div>
+      <div class="theme-buttons">
+        <button class="theme-btn" data-theme="white">
+          <span class="theme-dot"></span> Minimal white
+        </button>
+        <button class="theme-btn" data-theme="beige">
+          <span class="theme-dot"></span> Beige luxe
+        </button>
+        <button class="theme-btn active" data-theme="pastel">
+          <span class="theme-dot"></span> Soft pastel
+        </button>
+        <button class="theme-btn" data-theme="mono">
+          <span class="theme-dot"></span> B&W bold
+        </button>
+        <button class="theme-btn" data-theme="neutral">
+          <span class="theme-dot"></span> Neutral clean
+        </button>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-grid">
+      <div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>Marketing & Creative · Vancouver, BC</span>
+        </div>
+
+        <div class="name-row">
+          <h1 class="name-highlight">Alysa Cardoz</h1>
+          <span class="hero-role">Marketing · Events · Retail</span>
+        </div>
+
+        <div class="tagline-main">
+          I make <span>simple marketing</span> feel memorable.
+        </div>
+        <p class="tagline-sub">
+          MBA graduate with hands-on experience in digital marketing, events, and retail.
+          I like clean visuals, clear messages, and brand experiences that feel easy and warm for people.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">
+            <span class="btn-icon">📄</span> Download Resume
+          </a>
+          <a class="btn btn-ghost" href="cover-letter.docx" target="_blank" rel="noopener">
+            <span class="btn-icon">📝</span> Download Cover Letter
+          </a>
+          <a class="btn btn-ghost" href="mailto:cardozalysa@gmail.com">
+            <span class="btn-icon">📮</span> Email Me
+          </a>
+        </div>
+
+        <div class="badge-row">
+          <span class="badge">Digital Marketing</span>
+          <span class="badge">Branding & Events</span>
+          <span class="badge">Retail Experience</span>
+          <span class="badge">Content & Visuals</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="metric-row">
+          <div class="metric-chip"><span>2×</span> sales in 4 hrs · Pop-up</div>
+          <div class="metric-chip"><span>+30%</span> online traffic</div>
+          <div class="metric-chip"><span>+25%</span> brand awareness</div>
+        </div>
+        <div class="stat-block">
+          <span class="stat-label">How I work</span>
+          <span class="stat-value">Calm, organised, people-first</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-label">Where I fit best</span>
+          <span class="stat-value">Fast, creative teams</span>
+        </div>
+        <div class="hero-footer">
+          <div>
+            <strong>Based in</strong><br>
+            Vancouver, BC · Open to travel
+          </div>
+          <div>
+            <strong>Contact</strong><br>
+            <a href="tel:+16728332410" style="color:inherit;text-decoration:none;">+1 672 833 2410</a><br>
+            <a href="mailto:cardozalysa@gmail.com" style="color:inherit;text-decoration:none;">cardozalysa@gmail.com</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section>
+      <h2 class="section-heading">What I Do</h2>
+      <p class="section-sub">
+        A simple mix of digital, events, and retail – always focused on how the customer actually feels.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 class="card-title">Digital & Social</h3>
+          <p class="card-tagline">Campaigns linked to numbers</p>
+          <p class="card-text">
+            I support and design digital campaigns that grow both traffic and sales.
+            At Vanilla Kart, campaigns I worked on helped increase online traffic by 30% and sales by 15% in three months.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Social strategy</span>
+            <span class="badge-small">Analytics</span>
+            <span class="badge-small">Reporting</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Brand & Events</h3>
+          <p class="card-tagline">Bringing brands to real people</p>
+          <p class="card-text">
+            With Kula Foods, I worked on events like Vancouver Vegan Festival, PNE, and Black Block Party.
+            My focus was simple: clear visuals, friendly energy, and smooth sampling that brings people closer to the brand.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Event activation</span>
+            <span class="badge-small">Sampling</span>
+            <span class="badge-small">Brand awareness</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Retail & In-Store</h3>
+          <p class="card-tagline">Making stores feel easy</p>
+          <p class="card-text">
+            At Adidas, I help customers with styling, sizes, and product choices while keeping the floor neat and stocked.
+            I also support new team members so they feel confident on the floor.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Customer care</span>
+            <span class="badge-small">Visual merchandising</span>
+            <span class="badge-small">Team support</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Content & Visuals</h3>
+          <p class="card-tagline">Clean and simple storytelling</p>
+          <p class="card-text">
+            I use my interest in digital art and writing to support social posts, simple layouts, and display ideas
+            that look soft, clear, and on-brand.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Copy support</span>
+            <span class="badge-small">Visual ideas</span>
+            <span class="badge-small">Brand tone</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2 class="section-heading">Experience</h2>
+      <p class="section-sub">
+        Places where I tested ideas with real customers, not just in class.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3 class="card-title">Sales Associate · Adidas</h3>
+          <p class="card-tagline">McArthur Glen Templeton, Richmond, BC · 12/2024 – Present</p>
+          <p class="card-text">
+            Helping customers with product selection and styling, keeping the store floor organised,
+            and supporting the team to reach sales goals in a calm and steady way.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Customer experience</span>
+            <span class="badge-small">Styling support</span>
+            <span class="badge-small">Store standards</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Sales & Marketing Associate · Kula Foods</h3>
+          <p class="card-tagline">Burnaby, BC · 08/2024 – 10/2024</p>
+          <p class="card-text">
+            Worked on event and in-store marketing for a vegan brand.
+            Helped increase awareness and encourage trial through simple displays, sampling, and warm conversations.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Events</span>
+            <span class="badge-small">Sampling</span>
+            <span class="badge-small">Customer engagement</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Sales & Digital Marketing Intern · Vanilla Kart</h3>
+          <p class="card-tagline">Remote · Aug – Oct 2021</p>
+          <p class="card-text">
+            Supported digital campaigns, content, and metric tracking.
+            Focused on aligning posts and offers with customer behaviour to grow traffic and sales.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Campaign support</span>
+            <span class="badge-small">Data & reports</span>
+            <span class="badge-small">Content ideas</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Volunteer · Kits Fest</h3>
+          <p class="card-tagline">Kitsilano, Vancouver, BC · 09–11/08/2024</p>
+          <p class="card-text">
+            Helped with event set-up, visitor support, and general flow.
+            It strengthened my skills in teamwork and live problem solving.
+          </p>
+          <div class="badge-row-small">
+            <span class="badge-small">Event logistics</span>
+            <span class="badge-small">Teamwork</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section>
+      <h2 class="section-heading">Brands & Events</h2>
+      <p class="section-sub">
+        A mix of global brands, local businesses, and community events.
+      </p>
+      <div class="card">
+        <div class="brands-row">
+          <span class="brand-pill">Adidas</span>
+          <span class="brand-pill">Kula Foods</span>
+          <span class="brand-pill">Vanilla Kart</span>
+          <span class="brand-pill">Kits Fest</span>
+          <span class="brand-pill">Vancouver Vegan Festival</span>
+          <span class="brand-pill">PNE</span>
+          <span class="brand-pill">Black Block Party</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2 class="section-heading">Education</h2>
+      <p class="section-sub">
+        Business foundations with extra focus on marketing, leadership, and communication.
+      </p>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 class="card-title">MBA · University Canada West</h3>
+          <p class="card-tagline">Vancouver, BC · 2025</p>
+          <p class="card-text">
+            Master of Business Administration with focus on marketing, consumer behaviour, and leadership.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">B.Com in Business Management</h3>
+          <p class="card-tagline">St. Xavier’s College, Goa, India · 2023</p>
+          <p class="card-text">
+            Built a strong base in business and management through projects and presentations.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Certificates</h3>
+          <p class="card-text">
+            • Certified Digital Marketing Associate – DMI (2024)<br>
+            • The Fundamentals of Digital Marketing – Google (2021)<br>
+            • Leadership Training – Certified<br>
+            • Public Speaking & Communication – London Institute of Corporate Training (2018)
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Creative & Achievements</h3>
+          <p class="card-text">
+            • Procreate Digital Art – Procreate School Online (2023)<br>
+            • The Complete Guide to Starting Up – Ankur Warikoo (Certified)<br>
+            • 1st Place – All Goa Essay Writing Competition<br>
+            • National Handwriting Olympiad, State Champion (Goa, 2016–2017)
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section>
+      <h2 class="section-heading">Downloads</h2>
+      <p class="section-sub">
+        You can save my resume or cover letter directly from here.
+      </p>
+      <div class="downloads">
+        <div class="download-card">
+          <div class="download-title">Resume (PDF)</div>
+          <div class="card-text">
+            Full overview of my experience, education, and skills in one page.
+          </div>
+          <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">
+            <span class="btn-icon">⬇️</span> Download Resume
+          </a>
+        </div>
+        <div class="download-card">
+          <div class="download-title">Cover Letter (DOCX)</div>
+          <div class="card-text">
+            Short note about who I am, how I work, and what I bring to a marketing team.
+          </div>
+          <a class="btn btn-ghost" href="cover-letter.docx" target="_blank" rel="noopener">
+            <span class="btn-icon">⬇️</span> Download Cover Letter
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2 class="section-heading">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">
+            Vancouver, BC · Open to travel
+          </div>
+        </div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">
+            <a href="tel:+16728332410">+1 672 833 2410</a>
+          </div>
+        </div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:cardozalysa@gmail.com">cardozalysa@gmail.com</a>
+          </div>
+        </div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+              linkedin.com (update with your profile link)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Alysa Cardoz · Marketing & Creative
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme switcher
+    const buttons = document.querySelectorAll(".theme-btn");
+    const body = document.body;
+
+    function setTheme(theme) {
+      body.className = "";
+      body.classList.add("theme-" + theme);
+      buttons.forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.theme === theme);
+      });
+      try {
+        localStorage.setItem("alysa-theme", theme);
+      } catch (e) {}
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        setTheme(btn.dataset.theme);
+      });
+    });
+
+    // Load saved theme if any
+    try {
+      const saved = localStorage.getItem("alysa-theme");
+      if (saved) {
+        setTheme(saved);
+      }
+    } catch (e) {}
+  </script>
+</body>
+</html>
